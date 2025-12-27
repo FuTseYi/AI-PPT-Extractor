@@ -1,0 +1,29 @@
+{
+  "name": "slidedeconstruct-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "An intelligent tool to deconstruct slides into editable elements using Google Gemini.",
+  "author": "yyy-OPS",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "@google/genai": "^1.34.0",
+    "pptxgenjs": "^4.0.1",
+    "pdfjs-dist": "^5.4.449",
+    "vite": "^7.3.0",
+    "@vitejs/plugin-react": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

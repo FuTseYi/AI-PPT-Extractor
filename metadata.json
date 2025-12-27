@@ -1,0 +1,5 @@
+{
+  "name": "SlideDeconstruct AI-多文件",
+  "description": "An intelligent tool that analyzes presentation slides, separating text (with LaTeX support) and visual elements into editable layers using Gemini Vision capabilities.",
+  "requestFramePermissions": []
+}
