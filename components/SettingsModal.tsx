@@ -43,12 +43,12 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, onSave, 
   };
 
   const handleConfigChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setSettings(prev => ({
       ...prev,
       [activeTab]: {
         ...prev[activeTab],
-        [name]: value
+        [name]: type === 'checkbox' ? checked : value
       }
     }));
   };
@@ -166,6 +166,23 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, onSave, 
                          {testingState.recognition === 'loading' ? 'Testing...' : testingState.recognition === 'success' ? 'Connected' : 'Test'}
                     </button>
                 </div>
+                
+                {/* JSON Mode Support Checkbox - Only for OpenAI */}
+                {activeTab === 'openai' && (
+                  <div className="mt-2 flex items-center gap-2">
+                    <input 
+                      type="checkbox" 
+                      id="supportsJsonMode"
+                      name="supportsJsonMode"
+                      checked={currentConfig.supportsJsonMode !== false}
+                      onChange={handleConfigChange}
+                      className="w-4 h-4 text-blue-600 bg-slate-100 border-slate-300 rounded focus:ring-blue-500 dark:bg-slate-700 dark:border-slate-600"
+                    />
+                    <label htmlFor="supportsJsonMode" className="text-xs text-slate-600 dark:text-slate-400">
+                      支持 JSON 模式 (response_format)
+                    </label>
+                  </div>
+                )}
              </div>
 
              {/* Drawing Model Row */}
@@ -198,7 +215,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, onSave, 
           </div>
           
           <div className="bg-slate-100 dark:bg-slate-700/50 p-3 rounded text-xs text-slate-500 dark:text-slate-400">
-             提示: {activeTab === 'gemini' ? 'Gemini 绘图模型建议使用 gemini-3-pro-image-preview 或 gemini-2.5-flash-image。' : 'OpenAI 识别模型需支持 Vision (如 gpt-4o)。绘图模型需支持 Image Generation (如 dall-e-3)。'}
+             提示: {activeTab === 'gemini' ? 'Gemini 绘图模型建议使用 gemini-3-pro-image-preview 或 gemini-2.5-flash-image。' : 'OpenAI 识别模型需支持 Vision (如 gpt-4o)。绘图模型需支持 Image Generation (如 dall-e-3)。如果使用 Qwen 等第三方模型，请取消勾选 JSON 模式支持。'}
           </div>
         </div>
 

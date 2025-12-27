@@ -55,6 +55,7 @@ export interface ProviderConfig {
   baseUrl: string;
   recognitionModel: string;
   drawingModel: string;
+  supportsJsonMode?: boolean; // Whether the model supports response_format json_object
 }
 
 export interface AISettings {
@@ -70,12 +71,14 @@ export const DEFAULT_AI_SETTINGS: AISettings = {
     baseUrl: 'https://generativelanguage.googleapis.com',
     recognitionModel: 'gemini-3-pro-preview',
     drawingModel: 'gemini-2.5-flash-image',
+    supportsJsonMode: true, // Gemini uses responseMimeType instead
   },
   openai: {
     apiKey: '',
     baseUrl: 'https://api.openai.com/v1',
     recognitionModel: 'gpt-4o',
     drawingModel: 'dall-e-3',
+    supportsJsonMode: true, // GPT-4 supports json_object mode
   }
 };
 

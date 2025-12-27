@@ -1,11 +1,31 @@
 {
-  "name": "slidedeconstruct-ai",
+  "name": "ai-ppt-extractor",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "description": "An intelligent tool to deconstruct slides into editable elements using Google Gemini.",
-  "author": "yyy-OPS",
+  "description": "🎨 AI-Powered PPT Reverse Engineering Tool - Turn static slide images into fully editable presentations",
+  "author": "謝懿Shine (FuTseYi)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FuTseYi/AI-PPT-Extractor.git"
+  },
+  "keywords": [
+    "ai",
+    "ppt",
+    "powerpoint",
+    "ocr",
+    "image-to-ppt",
+    "gemini",
+    "gpt-4",
+    "slide-extractor",
+    "reverse-engineering",
+    "presentation"
+  ],
+  "homepage": "https://github.com/FuTseYi/AI-PPT-Extractor#readme",
+  "bugs": {
+    "url": "https://github.com/FuTseYi/AI-PPT-Extractor/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

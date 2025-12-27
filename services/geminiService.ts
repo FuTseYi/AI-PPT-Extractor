@@ -213,7 +213,9 @@ const callOpenAIChat = async (
         max_tokens: 16384, // Increased to ensure JSON isn't cut off
     };
 
-    if (jsonMode) {
+    // Only add response_format if the model explicitly supports it
+    // This is controlled by the supportsJsonMode config flag
+    if (jsonMode && config.supportsJsonMode !== false) {
         body.response_format = { type: "json_object" };
     }
 
